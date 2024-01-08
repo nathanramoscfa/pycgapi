@@ -4,6 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 [![Python application](https://github.com/nathanramoscfa/coingeckoapi/actions/workflows/main.yml/badge.svg)](https://github.com/nathanramoscfa/coingeckoapi/actions/workflows/main.yml)
+[![codecov](https://codecov.io/gh/nathanramoscfa/coingeckoapi/graph/badge.svg?token=I1CRHDN73S)](https://codecov.io/gh/nathanramoscfa/coingeckoapi)
 
 ## Overview
 `coingeckoapi` is an unofficial Python wrapper for the CoinGecko API (V3). It's designed to process API endpoint

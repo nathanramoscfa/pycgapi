@@ -16,6 +16,9 @@
    :target: https://github.com/nathanramoscfa/coingeckoapi/actions/workflows/main.yml
    :alt: Python application
 
+.. image:: https://codecov.io/gh/nathanramoscfa/coingeckoapi/graph/badge.svg?token=I1CRHDN73S
+   :target: https://codecov.io/gh/nathanramoscfa/coingeckoapi
+
 
 Overview
 ========
