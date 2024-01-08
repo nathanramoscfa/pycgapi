@@ -1,0 +1,50 @@
+derivatives_response = [
+    {
+        "market": "Deepcoin (Derivatives)",
+        "symbol": "ETHUSDT",
+        "index_id": "ETH",
+        "price": "2347.42",
+        "price_percentage_change_24h": 5.283936438434828,
+        "contract_type": "perpetual",
+        "index": 2343.9045,
+        "basis": -0.12338077381966933,
+        "spread": 0.01,
+        "funding_rate": -0.019822,
+        "open_interest": 6731632801.27,
+        "volume_24h": 570450813.7592447,
+        "last_traded_at": 1703692466,
+        "expired_at": "null"
+    },
+    {
+        "market": "Binance (Futures)",
+        "symbol": "BTCUSDT",
+        "index_id": "BTC",
+        "price": "43046.19",
+        "price_percentage_change_24h": 1.2844563597890073,
+        "contract_type": "perpetual",
+        "index": 43003.37,
+        "basis": -0.063280549190576,
+        "spread": 0.01,
+        "funding_rate": 0.033049,
+        "open_interest": 3374405304.76,
+        "volume_24h": 12243119966.75725,
+        "last_traded_at": 1703692365,
+        "expired_at": "null"
+    },
+    {
+        "market": "Bybit (Futures)",
+        "symbol": "BTCUSDT",
+        "index_id": "BTC",
+        "price": "43043.29",
+        "price_percentage_change_24h": 1.3301022775175506,
+        "contract_type": "perpetual",
+        "index": 43007.61,
+        "basis": -0.046690852636789786,
+        "spread": 0.01,
+        "funding_rate": 0.0528,
+        "open_interest": 2601975845.15,
+        "volume_24h": 4688431041.446549,
+        "last_traded_at": 1703692374,
+        "expired_at": "null"
+    }
+]

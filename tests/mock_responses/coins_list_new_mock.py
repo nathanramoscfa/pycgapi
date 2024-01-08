@@ -1,0 +1,11 @@
+coins_list_new_response = [{"id": "texan", "symbol": "texan", "name": "Texan", "activated_at": 1673690316},
+                           {"id": "nexacoin", "symbol": "nexa", "name": "Nexacoin", "activated_at": 1673689429},
+                           {"id": "agrinode", "symbol": "agn", "name": "AgriNode", "activated_at": 1673687293},
+                           {"id": "local-money", "symbol": "local", "name": "Local Money", "activated_at": 1673660974},
+                           {"id": "ranbased", "symbol": "ranb", "name": "RANBASED", "activated_at": 1673608442},
+                           {"id": "etwinfinity", "symbol": "etw", "name": "ETWInfinity", "activated_at": 1673604514},
+                           {"id": "communis", "symbol": "com", "name": "Communis", "activated_at": 1673595687},
+                           {"id": "iazuki", "symbol": "iazuki", "name": "IAzuki", "activated_at": 1673590766},
+                           {"id": "himfers", "symbol": "hiMFERS", "name": "hiMFERS", "activated_at": 1673590471},
+                           {"id": "tipo-token", "symbol": "tipo", "name": "TIPO Token", "activated_at": 1673581178},
+                           {"id": "cope-token", "symbol": "cope", "name": "Cope Token", "activated_at": 1673576722}]
