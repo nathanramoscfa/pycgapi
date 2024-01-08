@@ -6,6 +6,38 @@
 [![pytest](https://github.com/nathanramoscfa/coingeckoapi/actions/workflows/main.yml/badge.svg)](https://github.com/nathanramoscfa/coingeckoapi/actions/workflows/main.yml)
 [![codecov](https://codecov.io/gh/nathanramoscfa/coingeckoapi/graph/badge.svg?token=I1CRHDN73S)](https://codecov.io/gh/nathanramoscfa/coingeckoapi)
 
+## Table of Contents
+1. [Overview](#overview)
+2. [Features](#features)
+3. [Installation](#installation)
+4. [API Key](#api-key)
+5. [Quick Start](#quick-start)
+6. [Usage Examples](#usage-examples)
+7. [Available Methods](#available-methods)
+   - [ping](#ping)
+   - [simple](#simple)
+   - [coins](#coins)
+   - [contract](#contract)
+   - [asset_platforms](#asset_platforms)
+   - [categories](#categories)
+   - [exchanges](#exchanges)
+   - [derivatives](#derivatives)
+   - [nfts (beta)](#nfts-beta)
+   - [exchange_rates](#exchange_rates)
+   - [search](#search)
+   - [trending](#trending)
+   - [global](#global)
+   - [companies (beta)](#companies-beta)
+   - [paid plan (exclusive)](#paid-plan-exclusive)
+   - [enterprise plan (exclusive)](#enterprise-plan-exclusive)
+8. [Running on Docker](#running-on-docker)
+9. [Testing](#testing)
+10. [Roadmap](#roadmap)
+11. [Contributing](#contributing)
+12. [License](#license)
+13. [Contact](#contact)
+
+
 ## Overview
 `coingeckoapi` is an unofficial Python wrapper for the CoinGecko API (V3). It's designed to process API endpoint
 responses to easy-to-use `pandas` DataFrames.  From simple price checks to complex historical data analysis, 
@@ -71,7 +103,7 @@ Output:
 'MY_API_KEY'
 ```
 
-## CoinGecko Crypto Data API Plans and Rate Limits
+### CoinGecko API Plans and Rate Limits
 
 CoinGecko offers various [API plans](https://www.coingecko.com/en/api/pricing) tailored to different user needs. Below 
 is a summary table of the key features of each plan:

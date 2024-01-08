@@ -2,15 +2,13 @@
 
 All notable changes to `coingeckoapi` will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to 
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to 
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-## [Unreleased]
 
 ### Added
 - Asynchronous functionality for enhanced performance (planned).
 
-## [1.0.0] - 2024-01-07
+## [0.1.0] - 2024-01-08
 
 ### Added
 - Initial release of `coingeckoapi`, an unofficial Python wrapper for the CoinGecko API (V3).
@@ -31,4 +29,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Fixed
 - Comprehensive testing for all functionalities ensuring robust performance.
 
----
+## [Unreleased]
+- No pending changes.

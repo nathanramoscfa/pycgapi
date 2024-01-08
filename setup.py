@@ -6,7 +6,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='coingeckoapi',
-    version='1.0.0',
+    version='0.1.0',
     author='Nathan Ramos, CFA',
     author_email='nathan.ramos.github@gmail.com',
     description='A Python wrapper for the CoinGecko API',

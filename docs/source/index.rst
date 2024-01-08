@@ -20,6 +20,13 @@
    :target: https://codecov.io/gh/nathanramoscfa/coingeckoapi
 
 
+Table of Contents
+=================
+
+.. contents::
+    :depth: 2
+
+
 Overview
 ========
 ``coingeckoapi`` is an unofficial Python wrapper for the CoinGecko API (V3). It's designed to process API endpoint
@@ -95,10 +102,6 @@ Output:
 ::
 
     'MY_API_KEY'
-
-
-CoinGecko Crypto Data API Plans and Rate Limits
-================================================
 
 CoinGecko offers various `API plans <https://www.coingecko.com/en/api/pricing>`_ tailored to different user needs. Below
 is a summary table of the key features of each plan:
@@ -335,17 +338,14 @@ Contact
 Find me on `LinkedIn <https://www.linkedin.com/in/nathanramos/>`_
 or schedule a meeting on `Calendly <https://calendly.com/nrcapitalmanagement/coingeckoapi-meeting>`_.
 
-
-Contents
-========
+API Contents
+============
 
 .. toctree::
    :maxdepth: 2
    :caption: API Reference
 
    coingeckoapi
-
-
 
 Indices and tables
 ==================
