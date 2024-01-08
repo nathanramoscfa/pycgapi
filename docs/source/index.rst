@@ -8,11 +8,6 @@
    :align: center
    :scale: 60%
 
-.. |nbsp| unicode:: 0xA0
-   :trim:
-
-|nbsp|
-
 .. image:: https://img.shields.io/badge/License-MIT-brightgreen.svg
    :target: https://img.shields.io/badge/
    :alt: License
