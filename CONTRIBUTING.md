@@ -69,11 +69,6 @@ Thank you for considering contributing to CoinGeckoAPI! We welcome contributions
 
 2. **Pull Request Merging**: Once your pull request is approved, a maintainer will merge it into the main repository.
 
-## Code of Conduct
-
-Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in 
-this project, you agree to abide by its terms.
-
 ## Questions or Issues?
 
 If you have questions or encounter any issues, feel free to open an issue on GitHub or contact the maintainers directly.

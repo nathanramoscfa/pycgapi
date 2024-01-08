@@ -8,6 +8,14 @@
    :align: center
    :scale: 60%
 
+.. image:: https://img.shields.io/badge/License-MIT-brightgreen.svg
+   :target: https://img.shields.io/badge/
+   :alt: License
+
+.. image:: https://github.com/nathanramoscfa/coingeckoapi/actions/workflows/main.yml/badge.svg
+   :target: https://github.com/nathanramoscfa/coingeckoapi/actions/workflows/main.yml
+   :alt: Python application
+
 
 Overview
 ========
