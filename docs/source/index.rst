@@ -8,6 +8,11 @@
    :align: center
    :scale: 60%
 
+.. |nbsp| unicode:: 0xA0
+   :trim:
+
+|nbsp|
+
 .. image:: https://img.shields.io/badge/License-MIT-brightgreen.svg
    :target: https://img.shields.io/badge/
    :alt: License
@@ -338,12 +343,12 @@ Contact
 Find me on `LinkedIn <https://www.linkedin.com/in/nathanramos/>`_
 or schedule a meeting on `Calendly <https://calendly.com/nrcapitalmanagement/coingeckoapi-meeting>`_.
 
-API Contents
-============
+API Documentation
+=================
 
 .. toctree::
    :maxdepth: 2
-   :caption: API Reference
+   :caption: API
 
    coingeckoapi
 
