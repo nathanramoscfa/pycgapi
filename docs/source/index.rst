@@ -24,6 +24,10 @@
 .. image:: https://codecov.io/gh/nathanramoscfa/coingeckoapi/graph/badge.svg?token=I1CRHDN73S
    :target: https://codecov.io/gh/nathanramoscfa/coingeckoapi
 
+.. image:: https://readthedocs.org/projects/coingeckoapi/badge/?version=latest
+   :target: https://coingeckoapi.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
 
 Table of Contents
 =================
