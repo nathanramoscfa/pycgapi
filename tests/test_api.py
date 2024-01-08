@@ -288,7 +288,7 @@ class TestCoinGeckoAPI(unittest.TestCase):
 
     # ---------- /coins/{id}/market_chart for multiple tickers ---------- #
     @patch.object(CoinGeckoAPI, 'multiple_coins_ohlc_data')
-    def test_multiple_coins_ohlc_data(self, mock_get):
+    def test_multiple_coins_historical_data(self, mock_get):
         """Test fetching historical market data for multiple coins."""
         # Prepare mock response
         mock_data_df = pd.DataFrame({
@@ -302,7 +302,7 @@ class TestCoinGeckoAPI(unittest.TestCase):
         mock_get.side_effect = [mock_data_df] * len(['bitcoin', 'ethereum', 'tether'])
 
         # Use the initialized API from setUp
-        historical_data_dict = self.api.multiple_coins_ohlc_data(['bitcoin', 'ethereum', 'tether'])
+        historical_data_dict = self.api.multiple_coins_historical_data(['bitcoin', 'ethereum', 'tether'])
 
         # Check the structure of the returned dictionary
         self.assertIn('price', historical_data_dict)

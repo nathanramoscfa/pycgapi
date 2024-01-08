@@ -467,7 +467,7 @@ class CoinGeckoAPI:
         - More than 90 days: daily data at 00:00 UTC.
 
         Args:
-            coin_id (str): The ID of the coin (e.g., 'bitcoin'). Refers to coins listed in get_coin_list method. 
+            coin_id (str): The ID of the coin (e.g., 'bitcoin'). Refers to coins listed in get_coin_list method.
             vs_currency (str, optional): The target currency of market data ('usd', 'eur', 'jpy', etc.).
                 Refers to supported vs_currencies. Defaults to 'usd'. Required.
             days (Union[int, str], optional): Data up to a number of days ago or 'max' for maximum available data.
