@@ -1,4 +1,5 @@
 from setuptools import setup, find_packages
+from pycgapi.__version__ import __version__
 
 # Read the contents of your requirements file
 with open('requirements.txt', encoding='utf-8') as f:
@@ -10,7 +11,7 @@ with open('README.md', encoding='utf-8') as f:
 
 setup(
     name='pycgapi',
-    version='0.1.0',
+    version=__version__,
     author='Nathan Ramos, CFA',
     author_email='nathan.ramos.github@gmail.com',
     description='A Python wrapper for the CoinGecko API',

@@ -12,6 +12,7 @@
 
 import os
 import sys
+from pycgapi.__version__ import __version__
 sys.path.insert(0, os.path.abspath('../..'))
 
 
@@ -22,8 +23,8 @@ copyright = '2024, Nathan Ramos, CFA'
 author = 'Nathan Ramos, CFA'
 
 # The full version, including alpha/beta/rc tags
-version = '0.1.0'
-release = '0.1.0'
+version = __version__
+release = __version__
 
 
 # -- General configuration ---------------------------------------------------

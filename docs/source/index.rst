@@ -28,6 +28,12 @@
    :target: https://coingeckoapi.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
+.. image:: https://img.shields.io/pypi/v/pycgapi
+   :target: https://pypi.org/project/pycgapi/
+
+.. image:: https://img.shields.io/pypi/pyversions/pycgapi
+   :target: https://pypi.org/project/pycgapi/
+
 
 Table of Contents
 =================
@@ -149,7 +155,7 @@ To initialize the ``pycgapi`` client, simply run the following code based on you
     import keyring
     from pycgapi import CoinGeckoAPI
 
-    # gets your API key from keyring
+    # gets your API key
     api_key = keyring.get_password(
        'coingecko',
        'api_key'
@@ -175,7 +181,7 @@ The output above confirms a successful connection to the CoinGecko API server.
 Usage Examples
 ==============
 
-See the `examples <https://github.com/nathanramoscfa/pycgapi/examples>`_ directory for detailed examples of all
+See the `examples <https://github.com/nathanramoscfa/pycgapi/tree/main/examples>`_ directory for detailed examples of all
 endpoints. Here are a few examples of ``pycgapi``:
 
 **Get a list of all supported coins:**
@@ -340,7 +346,7 @@ License
 =======
 
 ``pycgapi`` is released under the MIT License. See
-`LICENSE <https://github.com/nathanramoscfa/pycgapi/LICENSE>`_ file for more details.
+`LICENSE <https://github.com/nathanramoscfa/pycgapi/blob/main/LICENSE>`_ file for more details.
 
 Contact
 =======
