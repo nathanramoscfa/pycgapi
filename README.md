@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 [![pytest](https://github.com/nathanramoscfa/cgapi/actions/workflows/main.yml/badge.svg)](https://github.com/nathanramoscfa/cgapi/actions/workflows/main.yml)
 [![codecov](https://codecov.io/gh/nathanramoscfa/cgapi/graph/badge.svg?token=I1CRHDN73S)](https://codecov.io/gh/nathanramoscfa/cgapi)
-[![Documentation Status](https://readthedocs.org/projects/cgapi/badge/?version=latest)](https://cgapi.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/coingeckoapi/badge/?version=latest)](https://coingeckoapi.readthedocs.io/en/latest/?badge=latest)
 
 ## Table of Contents
 1. [Overview](#overview)

@@ -24,8 +24,8 @@
 .. image:: https://codecov.io/gh/nathanramoscfa/cgapi/graph/badge.svg?token=I1CRHDN73S
    :target: https://codecov.io/gh/nathanramoscfa/cgapi
 
-.. image:: https://readthedocs.org/projects/cgapi/badge/?version=latest
-   :target: https://cgapi.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/coingeckoapi/badge/?version=latest
+   :target: https://coingeckoapi.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
 
