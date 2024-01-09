@@ -1,5 +1,5 @@
 pycgapi
-============
+=======
 
 .. automodule:: pycgapi.api
     :members:
