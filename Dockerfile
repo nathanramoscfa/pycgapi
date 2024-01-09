@@ -16,7 +16,7 @@ EXPOSE 8000
 
 # Define environment variable
 # (Set environment variables used by your application)
-ENV NAME cgapi
+ENV NAME pycgapi
 
 # Run the application when the container launches
 # (Modify the command based on how you run your application, e.g., python script or a web server)

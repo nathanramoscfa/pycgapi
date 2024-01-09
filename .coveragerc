@@ -1,11 +1,11 @@
 [run]
 # Paths to include in coverage analysis
 include =
-    cgapi/*
+    pycgapi/*
 
 # Paths to omit from coverage analysis
 omit =
-    cgapi/__init__.py
+    pycgapi/__init__.py
     tests/*
     setup.py
     */.ipynb_checkpoints/*

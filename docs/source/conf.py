@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.abspath('../..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'cgapi'
+project = 'pycgapi'
 copyright = '2024, Nathan Ramos, CFA'
 author = 'Nathan Ramos, CFA'
 

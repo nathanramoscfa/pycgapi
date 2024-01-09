@@ -9,14 +9,14 @@ with open('README.md', encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='cgapi',
+    name='pycgapi',
     version='0.1.0',
     author='Nathan Ramos, CFA',
     author_email='nathan.ramos.github@gmail.com',
     description='A Python wrapper for the CoinGecko API',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/nathanramoscfa/cgapi',
+    url='https://github.com/nathanramoscfa/pycgapi',
     packages=find_packages(),
     install_requires=required,
     python_requires='>=3.11',

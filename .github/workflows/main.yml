@@ -30,7 +30,7 @@ jobs:
     - name: Run tests with coverage
       run: |
         export PYTHONPATH=$PYTHONPATH:./
-        pytest --cov=./cgapi --cov-report=xml
+        pytest --cov=./pycgapi --cov-report=xml
       env:
         pythonLocation: /opt/hostedtoolcache/Python/3.11.7/x64
     - name: Upload coverage reports to Codecov

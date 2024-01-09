@@ -1,7 +1,7 @@
-cgapi
+pycgapi
 ============
 
-.. automodule:: cgapi.api
+.. automodule:: pycgapi.api
     :members:
     :undoc-members:
     :show-inheritance:

@@ -17,12 +17,12 @@
    :target: https://img.shields.io/badge/
    :alt: License
 
-.. image:: https://github.com/nathanramoscfa/cgapi/actions/workflows/main.yml/badge.svg
-   :target: https://github.com/nathanramoscfa/cgapi/actions/workflows/main.yml
+.. image:: https://github.com/nathanramoscfa/pycgapi/actions/workflows/main.yml/badge.svg
+   :target: https://github.com/nathanramoscfa/pycgapi/actions/workflows/main.yml
    :alt: pytest
 
-.. image:: https://codecov.io/gh/nathanramoscfa/cgapi/graph/badge.svg?token=I1CRHDN73S
-   :target: https://codecov.io/gh/nathanramoscfa/cgapi
+.. image:: https://codecov.io/gh/nathanramoscfa/pycgapi/graph/badge.svg?token=I1CRHDN73S
+   :target: https://codecov.io/gh/nathanramoscfa/pycgapi
 
 .. image:: https://readthedocs.org/projects/coingeckoapi/badge/?version=latest
    :target: https://coingeckoapi.readthedocs.io/en/latest/?badge=latest
@@ -38,15 +38,15 @@ Table of Contents
 
 Overview
 ========
-``cgapi`` is an unofficial Python wrapper for the CoinGecko API (V3). It's designed to process API endpoint
+``pycgapi`` is an unofficial Python wrapper for the CoinGecko API (V3). It's designed to process API endpoint
 responses to easy-to-use ``pandas`` DataFrames. From simple price checks to complex historical
-data analysis, ``cgapi`` facilitates seamless integration with the CoinGecko API. For more information on the
+data analysis, ``pycgapi`` facilitates seamless integration with the CoinGecko API. For more information on the
 official CoinGecko API, please refer to their `documentation <https://www.coingecko.com/api/documentation>`_.
 
 
 Features
 ========
-``cgapi`` provides a user-friendly and efficient way to interact with
+``pycgapi`` provides a user-friendly and efficient way to interact with
 the CoinGecko API. It simplifies the process of retrieving cryptocurrency data, offering the following features:
 
 #. **Simplified Endpoints**: Access to CoinGecko's extensive cryptocurrency data through easy-to-use Python methods.
@@ -68,25 +68,25 @@ the CoinGecko API. It simplifies the process of retrieving cryptocurrency data, 
 #. **Easy Integration**: Designed for easy integration into financial analysis tools, trading bots, and cryptocurrency
    applications.
 
-``cgapi`` is ideal for cryptocurrency enthusiasts, financial analysts, data scientists, and developers seeking a
+``pycgapi`` is ideal for cryptocurrency enthusiasts, financial analysts, data scientists, and developers seeking a
 robust and comprehensive solution for accessing CoinGecko's extensive cryptocurrency data.
 
 
 Installation
 ============
-``cgapi`` is available on `PyPI <https://pypi.org/project/cgapi/>`_ and can be installed using
+``pycgapi`` is available on `PyPI <https://pypi.org/project/pycgapi/>`_ and can be installed using
 ``pip``:
 
 .. code-block:: bash
 
-    pip install cgapi
+    pip install pycgapi
 
-Alternatively, you can install the latest version of ``cgapi`` directly from the
+Alternatively, you can install the latest version of ``pycgapi`` directly from the
 `GitHub <https://www.coingecko.com/api/documentation>`_ repository.
 
 .. code-block:: bash
 
-    pip install git+https://github.com/nathanramoscfa/cgapi.git
+    pip install git+https://github.com/nathanramoscfa/pycgapi.git
 
 
 API Key
@@ -133,13 +133,13 @@ is a summary table of the key features of each plan:
 Quick Start
 ===========
 
-To initialize the ``cgapi`` client, simply run the following code based on your API plan:
+To initialize the ``pycgapi`` client, simply run the following code based on your API plan:
 
 **Demo (Beta) API:**
 
 .. code-block:: python
 
-    from cgapi import CoinGeckoAPI
+    from pycgapi import CoinGeckoAPI
     api = CoinGeckoAPI()  # no API key required for public API
 
 **Paid Plan API:**
@@ -147,7 +147,7 @@ To initialize the ``cgapi`` client, simply run the following code based on your 
 .. code-block:: python
 
     import keyring
-    from cgapi import CoinGeckoAPI
+    from pycgapi import CoinGeckoAPI
 
     # gets your API key from keyring
     api_key = keyring.get_password(
@@ -175,8 +175,8 @@ The output above confirms a successful connection to the CoinGecko API server.
 Usage Examples
 ==============
 
-See the `examples <https://github.com/nathanramoscfa/cgapi/examples>`_ directory for detailed examples of all
-endpoints. Here are a few examples of ``cgapi``:
+See the `examples <https://github.com/nathanramoscfa/pycgapi/examples>`_ directory for detailed examples of all
+endpoints. Here are a few examples of ``pycgapi``:
 
 **Get a list of all supported coins:**
 
@@ -339,13 +339,13 @@ Contributions are welcome! Please feel free to submit pull requests, report bugs
 License
 =======
 
-``cgapi`` is released under the MIT License. See
-`LICENSE <https://github.com/nathanramoscfa/cgapi/LICENSE>`_ file for more details.
+``pycgapi`` is released under the MIT License. See
+`LICENSE <https://github.com/nathanramoscfa/pycgapi/LICENSE>`_ file for more details.
 
 Contact
 =======
 Find me on `LinkedIn <https://www.linkedin.com/in/nathanramos/>`_
-or schedule a meeting on `Calendly <https://calendly.com/nrcapitalmanagement/cgapi-meeting>`_.
+or schedule a meeting on `Calendly <https://calendly.com/nrcapitalmanagement/pycgapi-meeting>`_.
 
 API Documentation
 =================
@@ -354,7 +354,7 @@ API Documentation
    :maxdepth: 2
    :caption: API
 
-   cgapi
+   pycgapi
 
 Indices and tables
 ==================

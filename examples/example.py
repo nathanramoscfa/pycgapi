@@ -1,10 +1,10 @@
 import sys
 import os
 
-# Set the path so that the script can import cgapi properly
+# Set the path so that the script can import pycgapi properly
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from cgapi import CoinGeckoAPI
+from pycgapi import CoinGeckoAPI
 
 
 def initialize_api():

@@ -3,8 +3,8 @@
 </p>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
-[![pytest](https://github.com/nathanramoscfa/cgapi/actions/workflows/main.yml/badge.svg)](https://github.com/nathanramoscfa/cgapi/actions/workflows/main.yml)
-[![codecov](https://codecov.io/gh/nathanramoscfa/cgapi/graph/badge.svg?token=I1CRHDN73S)](https://codecov.io/gh/nathanramoscfa/cgapi)
+[![pytest](https://github.com/nathanramoscfa/pycgapi/actions/workflows/main.yml/badge.svg)](https://github.com/nathanramoscfa/pycgapi/actions/workflows/main.yml)
+[![codecov](https://codecov.io/gh/nathanramoscfa/pycgapi/graph/badge.svg?token=I1CRHDN73S)](https://codecov.io/gh/nathanramoscfa/pycgapi)
 [![Documentation Status](https://readthedocs.org/projects/coingeckoapi/badge/?version=latest)](https://coingeckoapi.readthedocs.io/en/latest/?badge=latest)
 
 ## Table of Contents
@@ -40,14 +40,14 @@
 
 
 ## Overview
-`cgapi` is an unofficial Python wrapper for the CoinGecko API (V3). It's designed to process API endpoint
+`pycgapi` is an unofficial Python wrapper for the CoinGecko API (V3). It's designed to process API endpoint
 responses to easy-to-use `pandas` DataFrames.  From simple price checks to complex historical data analysis, 
-`cgapi` facilitates seamless integration with the CoinGecko API. For more information on the 
+`pycgapi` facilitates seamless integration with the CoinGecko API. For more information on the 
 official CoinGecko API, please refer to the official [documentation](https://www.coingecko.com/api/documentation).
 
 ## Features
 
-`cgapi` provides a user-friendly and efficient way to interact with 
+`pycgapi` provides a user-friendly and efficient way to interact with 
 the CoinGecko API. It simplifies the process of retrieving cryptocurrency data, offering the following features:
 
 1. **Simplified Endpoints**: Access to CoinGecko's extensive cryptocurrency data through easy-to-use Python methods.
@@ -69,21 +69,21 @@ the CoinGecko API. It simplifies the process of retrieving cryptocurrency data, 
 10. **Easy Integration**: Designed for easy integration into financial analysis tools, trading bots, and cryptocurrency 
     applications.
 
-`cgapi` is ideal for cryptocurrency enthusiasts, financial analysts, data scientists, and developers seeking a 
+`pycgapi` is ideal for cryptocurrency enthusiasts, financial analysts, data scientists, and developers seeking a 
 robust and comprehensive solution for accessing CoinGecko's extensive cryptocurrency data.
 
 ## Installation
-To install `cgapi`, simply run:
+To install `pycgapi`, simply run:
 
 ```bash
-pip install cgapi
+pip install pycgapi
 ```
 
 Or, clone from GitHub and install:
 
 ```bash
-git clone https://github.com/nathanramoscfa/cgapi.git
-cd cgapi
+git clone https://github.com/nathanramoscfa/pycgapi.git
+cd pycgapi
 python setup.py install
 ```
 
@@ -118,12 +118,12 @@ is a summary table of the key features of each plan:
 | Enterprise  | Custom Pricing | Custom Pricing         | Custom         | Custom                |
 
 ## Quick Start
-To initialize the `cgapi` client, simply run the following code based on your API plan:
+To initialize the `pycgapi` client, simply run the following code based on your API plan:
 
 **Demo (Beta) API:**
 
 ```python
-from cgapi import CoinGeckoAPI
+from pycgapi import CoinGeckoAPI
 api = CoinGeckoAPI()  # no API key required for public API
 ```
 
@@ -131,7 +131,7 @@ api = CoinGeckoAPI()  # no API key required for public API
 
 ```python
 import keyring
-from cgapi import CoinGeckoAPI
+from pycgapi import CoinGeckoAPI
 api_key = keyring.get_password('coingecko', 'api_key')  # gets your API key from keyring
 api = CoinGeckoAPI(api_key, pro_api=True)  # must provide api_key and set pro_api=True
 ```
@@ -150,7 +150,7 @@ The output above confirms a successful connection to the CoinGecko API server.
 
 ## Usage Examples
 For detailed examples of all endpoints, see the 
-[examples directory](https://github.com/nathanramoscfa/cgapi/examples). Here are a few examples of `cgapi`:
+[examples directory](https://github.com/nathanramoscfa/pycgapi/examples). Here are a few examples of `pycgapi`:
 
 **Get a list of all supported coins:**
 
@@ -248,8 +248,8 @@ timestamp
 ```
 
 ## Available Methods
-`cgapi` offers a wide range of methods for accessing cryptocurrency data. For a complete list of available
-methods, please refer to the [documentation](https://nathanramoscfa.github.io/cgapi/). 
+`pycgapi` offers a wide range of methods for accessing cryptocurrency data. For a complete list of available
+methods, please refer to the [documentation](https://nathanramoscfa.github.io/pycgapi/). 
 
 <details><summary>ping</summary>
 <p>
@@ -614,7 +614,7 @@ api.all_tokens_list(asset_platform_id='ethereum')
 </details>
 
 ## Running on Docker
-You can run `cgapi` inside a Docker container. Below are the steps to build and run the Docker image:
+You can run `pycgapi` inside a Docker container. Below are the steps to build and run the Docker image:
 
 1. **Build the Docker Image**:
 
@@ -622,7 +622,7 @@ You can run `cgapi` inside a Docker container. Below are the steps to build and 
    following command:
 
    ```bash
-   docker build --no-cache -t cgapi .
+   docker build --no-cache -t pycgapi .
    ```
    
 2. **Running the Docker Container**:
@@ -630,7 +630,7 @@ You can run `cgapi` inside a Docker container. Below are the steps to build and 
    Once the Docker image is built, you can run the Docker container using the following command:
    
    ```bash
-   docker run -it cgapi
+   docker run -it pycgapi
    ```
 
 ## Testing
@@ -662,8 +662,8 @@ the detailed coverage report.
 Contributions are welcome! Please feel free to submit pull requests, report bugs, or suggest new features.
 
 ## License
-`cgapi` is released under the MIT License. See [LICENSE](https://github.com/nathanramoscfa/cgapi/LICENSE) file for more details.
+`pycgapi` is released under the MIT License. See [LICENSE](https://github.com/nathanramoscfa/pycgapi/LICENSE) file for more details.
 
 ## Contact
 Find me on [LinkedIn](https://www.linkedin.com/in/nathanramoscfa/) or schedule a meeting with me on 
-[Calendly](https://calendly.com/nrcapitalmanagement/cgapi-meeting). 
+[Calendly](https://calendly.com/nrcapitalmanagement/pycgapi-meeting). 
