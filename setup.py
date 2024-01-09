@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-from pycgapi.__version__ import __version__
+from __version__ import __version__
 
 # Read the contents of your requirements file
 with open('requirements.txt', encoding='utf-8') as f:
