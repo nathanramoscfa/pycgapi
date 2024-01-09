@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.abspath('../..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'coingeckoapi'
+project = 'cgapi'
 copyright = '2024, Nathan Ramos, CFA'
 author = 'Nathan Ramos, CFA'
 

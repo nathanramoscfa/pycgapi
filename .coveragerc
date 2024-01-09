@@ -1,11 +1,11 @@
 [run]
 # Paths to include in coverage analysis
 include =
-    coingeckoapi/*
+    cgapi/*
 
 # Paths to omit from coverage analysis
 omit =
-    coingeckoapi/__init__.py
+    cgapi/__init__.py
     tests/*
     setup.py
     */.ipynb_checkpoints/*

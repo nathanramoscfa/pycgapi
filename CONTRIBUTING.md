@@ -9,8 +9,8 @@ Thank you for considering contributing to CoinGeckoAPI! We welcome contributions
 1. **Fork and Clone the Repository**: Start by forking the main repository and cloning your fork to your local machine.
 
     ```bash
-    git clone https://github.com/your-username/coingeckoapi.git
-    cd coingeckoapi
+    git clone https://github.com/nathanramoscfa/cgapi.git
+    cd cgapi
     ```
 
 2. **Set Up Your Environment**: Make sure you have Python installed and set up a virtual environment. Install the development dependencies.
@@ -59,7 +59,7 @@ Thank you for considering contributing to CoinGeckoAPI! We welcome contributions
     git push origin your-feature-branch
     ```
 
-8. **Create a Pull Request**: Go to the original `coingeckoapi` repository and create a pull request from your fork. 
+8. **Create a Pull Request**: Go to the original `cgapi` repository and create a pull request from your fork. 
    Provide a clear description in your pull request explaining your changes.
 
 ## After Submission

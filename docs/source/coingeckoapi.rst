@@ -1,7 +1,7 @@
-coingeckoapi
+cgapi
 ============
 
-.. automodule:: coingeckoapi.api
+.. automodule:: cgapi.api
     :members:
     :undoc-members:
     :show-inheritance:

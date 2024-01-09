@@ -6,7 +6,7 @@ import pandas as pd
 from pytz import utc
 
 import mock_responses as mock
-from coingeckoapi import CoinGeckoAPI
+from cgapi import CoinGeckoAPI
 
 
 class TestCoinGeckoAPI(unittest.TestCase):
@@ -187,7 +187,7 @@ class TestCoinGeckoAPI(unittest.TestCase):
         pd.testing.assert_frame_equal(df, expected_df)
 
     # ---------- /coins/markets for multiple coin ids ---------- #
-    @patch('coingeckoapi.CoinGeckoAPI.coins_market_data')
+    @patch('cgapi.CoinGeckoAPI.coins_market_data')
     def test_top_coins_market_data(self, mock_get):
         """Test fetching market data for top N cryptocurrencies."""
         # Mock response for coins_market_data
@@ -881,7 +881,7 @@ class TestCoinGeckoAPI(unittest.TestCase):
                 self.assertEqual(nft_collection_data[key], value)
 
     # ---------- /nfts/{id} for multiple coin ids ---------- #
-    @patch('coingeckoapi.CoinGeckoAPI.nft_collection_info')
+    @patch('cgapi.CoinGeckoAPI.nft_collection_info')
     def test_nft_collections_info(self, mock_nft_collection_info):
         """Test fetching current data for multiple NFT collections."""
 
