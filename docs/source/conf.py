@@ -12,9 +12,8 @@
 
 import os
 import sys
-from pycgapi.__version__ import __version__
 sys.path.insert(0, os.path.abspath('../..'))
-
+from pycgapi.__version__ import __version__
 
 # -- Project information -----------------------------------------------------
 
