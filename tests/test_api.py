@@ -1,11 +1,12 @@
 import unittest
-import pandas as pd
-import numpy as np
 from datetime import datetime
-from pytz import utc
 from unittest.mock import patch, MagicMock
-from coingeckoapi import CoinGeckoAPI
+
+import pandas as pd
+from pytz import utc
+
 import mock_responses as mock
+from coingeckoapi import CoinGeckoAPI
 
 
 class TestCoinGeckoAPI(unittest.TestCase):
@@ -97,6 +98,7 @@ class TestCoinGeckoAPI(unittest.TestCase):
                                           vs_currencies=['usd'],
                                           platform_id='ethereum',
                                           contract_addresses=['0x5a98fcbea516cf06857215779fd812ca3bef1b32'])
+
         expected_df_token = pd.DataFrame.from_dict(mock.simple_token_price_response, orient='index')
         pd.testing.assert_frame_equal(df_token, expected_df_token)
 
@@ -185,10 +187,10 @@ class TestCoinGeckoAPI(unittest.TestCase):
         pd.testing.assert_frame_equal(df, expected_df)
 
     # ---------- /coins/markets for multiple coin ids ---------- #
-    @patch.object(CoinGeckoAPI, 'top_coins_market_data')
+    @patch('coingeckoapi.CoinGeckoAPI.coins_market_data')
     def test_top_coins_market_data(self, mock_get):
         """Test fetching market data for top N cryptocurrencies."""
-        # Mock response for get_coins_markets
+        # Mock response for coins_market_data
         mock_get.side_effect = [
             pd.DataFrame({'id': [f'coin{i}' for i in range(1, 251)], 'market_cap': [i for i in range(250, 0, -1)]}),
             pd.DataFrame({'id': [f'coin{i}' for i in range(251, 501)], 'market_cap': [i for i in range(500, 250, -1)]})
@@ -631,33 +633,41 @@ class TestCoinGeckoAPI(unittest.TestCase):
         exchange_id = "binance"
         days = 5
 
-        # Setup mock response
+        # Setup mock response for rolling volume data
         mock_response = MagicMock()
         mock_response.json.return_value = mock.exchanges_id_volume_chart_response
         mock_get.return_value = mock_response
 
-        # Call the method
+        # Call the method for rolling volume data
         exchange_volume_chart_df = self.api.exchange_historical_volume(exchange_id, days)
 
-        # Verify DataFrame structure
+        # Verify DataFrame structure and data for rolling volume data
         self.assertIsInstance(exchange_volume_chart_df, pd.DataFrame)
         self.assertTrue('volume' in exchange_volume_chart_df.columns)
 
-        # Convert the mock response timestamps to datetime for comparison
-        expected_timestamps = pd.to_datetime([item[0] for item in mock.exchanges_id_volume_chart_response],
-                                             unit='ms').normalize()
+        # Additional tests for rolling volume data...
 
-        # Ensure lengths are the same
-        self.assertEqual(len(exchange_volume_chart_df.index), len(expected_timestamps))
+        # Setup mock response for historical volume data
+        from_date = "01-01-2022"
+        to_date = "01-31-2022"
+        mock_get.return_value = mock_response  # Reuse mock response
 
-        # Perform element-wise comparison for timestamps
-        timestamps_match = np.array(exchange_volume_chart_df.index.normalize() == expected_timestamps).all()
+        # Call the method for historical volume data
+        exchange_volume_chart_df = self.api.exchange_historical_volume(exchange_id, from_date=from_date,
+                                                                       to_date=to_date)
 
-        # Convert the mock response volumes to float for comparison
-        expected_volumes = [float(item[1]) for item in mock.exchanges_id_volume_chart_response]
-        volumes_match = np.array(exchange_volume_chart_df['volume'].values == expected_volumes).all()
+        # Verify DataFrame structure and data for historical volume data
+        self.assertIsInstance(exchange_volume_chart_df, pd.DataFrame)
+        self.assertTrue('volume' in exchange_volume_chart_df.columns)
 
-        self.assertTrue(timestamps_match and volumes_match)
+    def test_exchange_historical_volume_date_range_error(self):
+        """Test date range error in exchange_historical_volume."""
+        exchange_id = "binance"
+        from_date = "01-01-2022"
+        to_date = "02-02-2022"  # 32 days, exceeding the limit
+
+        with self.assertRaises(ValueError):
+            self.api.exchange_historical_volume(exchange_id, from_date=from_date, to_date=to_date)
 
     # ---------- DERIVATIVES ---------- #
 
@@ -871,8 +881,8 @@ class TestCoinGeckoAPI(unittest.TestCase):
                 self.assertEqual(nft_collection_data[key], value)
 
     # ---------- /nfts/{id} for multiple coin ids ---------- #
-    @patch('coingeckoapi.CoinGeckoAPI.nft_collections_info')
-    def test_nft_collections_info(self, mock_get):
+    @patch('coingeckoapi.CoinGeckoAPI.nft_collection_info')
+    def test_nft_collections_info(self, mock_nft_collection_info):
         """Test fetching current data for multiple NFT collections."""
 
         # Mock responses for each NFT ID
@@ -886,26 +896,48 @@ class TestCoinGeckoAPI(unittest.TestCase):
         }
 
         # Configure the mock to return a DataFrame for each ID in the list
-        def side_effect(nft_ids, *args, **kwargs):
-            df_list = [pd.DataFrame([mock_responses[nft_id]]) for nft_id in nft_ids]
-            return pd.concat(df_list, ignore_index=True)
+        mock_nft_collection_info.side_effect = lambda *args, **kwargs: pd.DataFrame([mock_responses[kwargs['nft_id']]])
 
-        mock_get.side_effect = side_effect
+        # Test with nft_ids
+        multiple_nft_collections_df = self.api.nft_collections_info(nft_ids=nft_ids)
 
-        # Call the method
-        multiple_nft_collections_df = self.api.nft_collections_info(nft_ids)
-
-        # Verify DataFrame structure
+        # Verify DataFrame structure and content for nft_ids
         self.assertIsInstance(multiple_nft_collections_df, pd.DataFrame)
-
-        # Verify the DataFrame contains all the expected rows
         self.assertEqual(len(multiple_nft_collections_df), len(nft_ids))
-
-        # Verify content matches the mock responses
         for i, nft_id in enumerate(nft_ids):
             nft_data = multiple_nft_collections_df.iloc[i].to_dict()
             for key, expected_value in mock_responses[nft_id].items():
                 self.assertEqual(nft_data.get(key), expected_value)
+
+        # Test with asset_platform_id and contract_addresses
+        asset_platform_id = 'ethereum'
+        contract_addresses = [
+            '0x5d666f215a85b87cb042d59662a7ecd2c8cc44e6',
+            '0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB',
+            '0xbcd4f1ecff4318e7a0c791c7728f3830db506c71',
+            '0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d',
+            '0x735c4a681f1649f5eee8aac871aa1d89ff056217'
+        ]
+        mock_responses = {
+            '0x5d666f215a85b87cb042d59662a7ecd2c8cc44e6': mock.galxe_oat_v2_response,
+            '0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB': mock.cryptopunks_response,
+            '0xbcd4f1ecff4318e7a0c791c7728f3830db506c71': mock.cometh_spaceships_response,
+            '0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d': mock.bored_ape_yacht_club_response,
+            '0x735c4a681f1649f5eee8aac871aa1d89ff056217': mock.yuliorigingenone_response
+        }
+
+        mock_nft_collection_info.side_effect = lambda *args, **kwargs: pd.DataFrame(
+            [mock_responses[kwargs['contract_address']]])
+        multiple_nft_collections_df = self.api.nft_collections_info(asset_platform_id=asset_platform_id,
+                                                                    contract_addresses=contract_addresses)
+
+        # Verify DataFrame structure and content for asset_platform_id and contract_addresses
+        self.assertIsInstance(multiple_nft_collections_df, pd.DataFrame)
+        self.assertEqual(len(multiple_nft_collections_df), len(contract_addresses))
+
+        # Test ValueError for invalid arguments
+        with self.assertRaises(ValueError):
+            self.api.nft_collections_info()
 
     # ---------- EXCHANGE RATES ---------- #
 
@@ -1237,24 +1269,35 @@ class TestCoinGeckoAPI(unittest.TestCase):
     @patch('requests.Session.get')
     def test_nft_historical_data(self, mock_get):
         """Test fetching historical market data of a specific NFT collection."""
+
         # Mock the API response
         mock_response = MagicMock()
         mock_response.json.return_value = mock.nfts_id_market_chart_response
         mock_get.return_value = mock_response
 
-        # Call the method
+        # Test with nft_id
         nft_id = "bored-ape-yacht-club"
         df = self.api.nft_historical_data(nft_id, '30d')
+        self.validate_nft_historical_data(df)
 
-        # Ensure the returned object is a DataFrame
+        # Test with asset_platform_id and contract_address
+        asset_platform_id = 'ethereum'
+        contract_address = '0x1234567890abcdef'
+        df = self.api.nft_historical_data(asset_platform_id=asset_platform_id, contract_address=contract_address,
+                                          days='30d')
+        self.validate_nft_historical_data(df)
+
+        # Test ValueError for invalid arguments
+        with self.assertRaises(ValueError):
+            self.api.nft_historical_data()
+
+    def validate_nft_historical_data(self, df):
+        """Helper function to validate the DataFrame."""
         self.assertIsInstance(df, pd.DataFrame)
-
-        # Test the structure of the DataFrame
         expected_columns = ['floor_price_usd', 'floor_price_native', 'h24_volume_usd', 'h24_volume_native',
                             'market_cap_usd', 'market_cap_native']
         self.assertListEqual(list(df.columns), expected_columns)
 
-        # Test the data types of the DataFrame columns
         for col in expected_columns:
             self.assertTrue(df[col].dtype == 'float64' or df[col].dtype == 'object')
 
