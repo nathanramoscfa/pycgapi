@@ -33,8 +33,8 @@ copyright = '2024, Nathan Ramos, CFA'
 author = 'Nathan Ramos, CFA'
 
 # The full version, including alpha/beta/rc tags
-version = __version__
-release = __version__
+version = get_version()
+release = get_version()
 
 # -- General configuration ---------------------------------------------------
 
