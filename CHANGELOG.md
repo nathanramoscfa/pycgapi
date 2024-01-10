@@ -8,7 +8,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ## [Unreleased]
 - Asynchronous functionality for enhanced performance (planned).
 
-## [0.1.1] - 2024-01-09
+## [0.1.2] - 2024-01-10
+
+### Fixed
+- Updated README.md to fix logo display issue.
+
+## [0.1.1] - 2024-01-10
 
 ### Added
 - Automated GitHub workflow for Pypi package release.

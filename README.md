@@ -1,14 +1,5 @@
-<style>
-  .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-  }
-</style>
-
-<p>
-  <img src="media/logo.png" alt="Logo" class="center">
+<p align="center">
+  <img src="media/logo.png" alt="Logo" style="width: 40%; height: auto;">
 </p>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
