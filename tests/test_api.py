@@ -86,6 +86,27 @@ class TestCoinGeckoAPI(unittest.TestCase):
         expected_df_crypto = pd.DataFrame.from_dict(mock.simple_price_response, orient='index')
         pd.testing.assert_frame_equal(df_crypto, expected_df_crypto)
 
+    # ---------- /simple/price?precision=2 ---------- #
+    @patch('requests.Session.get')
+    def test_get_simple_prices_by_id_with_precision(self, mock_get):
+        """Test fetching simple prices for cryptocurrencies."""
+        # Prepare mock responses
+        mock_get.side_effect = [MagicMock(json=lambda: mock.simple_price_response)]
+
+        # Test cryptocurrency prices with precision
+        precision = '2'
+        df_crypto = self.api.simple_prices(coin_ids=['bitcoin'], vs_currencies=['usd'], precision=precision)
+
+        # Modify the expected response based on the precision
+        expected_response_modified = {
+            'bitcoin': {
+                'usd': round(mock.simple_price_response['bitcoin']['usd'], int(precision))
+            }
+        }
+        expected_df_crypto = pd.DataFrame.from_dict(expected_response_modified, orient='index')
+
+        pd.testing.assert_frame_equal(df_crypto, expected_df_crypto)
+
     # ---------- /simple/token_price/{platform_id} ---------- #
     @patch('requests.Session.get')
     def test_get_simple_prices_by_contract(self, mock_get):
@@ -335,6 +356,24 @@ class TestCoinGeckoAPI(unittest.TestCase):
             self.assertEqual(ohlc_df.iloc[i]['Low'], row[3])
             self.assertEqual(ohlc_df.iloc[i]['Close'], row[4])
 
+    # ---------- /coins/{id}/ohlc?precision=2 ---------- #
+    @patch('requests.Session.get')
+    def test_coin_ohlc_data_with_precision(self, mock_get):
+        """Test fetching OHLC data for a specific coin with precision."""
+        # Mock the API response
+        mock_response = MagicMock()
+        mock_response.json.return_value = mock.coins_id_ohlc_response
+        mock_get.return_value = mock_response
+
+        # Call the method with precision
+        precision = '2'  # example precision value
+        ohlc_df = self.api.coin_ohlc_data('bitcoin', precision=precision)
+
+        # Assert that the precision parameter was passed correctly
+        args, kwargs = mock_get.call_args
+        self.assertTrue('precision' in kwargs['params'])
+        self.assertEqual(kwargs['params']['precision'], precision)
+
     # ---------- /coins/{id}/ohlc for multiple tickers ---------- #
     @patch.object(CoinGeckoAPI, 'coin_ohlc_data')
     def test_multiple_coins_ohlc_data(self, mock_get):
@@ -379,12 +418,13 @@ class TestCoinGeckoAPI(unittest.TestCase):
     # or
     # ---------- /coins/{id}/contract/{contract_address}/market_chart/range ---------- #
     @patch('requests.Session.get')
-    def test_contract_historical_market_data_by_days(self, mock_get):
+    def test_contract_historical_market_data_by_days_with_precision(self, mock_get):
         """Test fetching historical market data for a token from its contract address."""
         platform_id = "ethereum"
         contract_address = "0x5a98fcbea516cf06857215779fd812ca3bef1b32"
         vs_currency = "usd"
         days = "max"
+        precision = "2"
 
         # Mock response
         mock_response = MagicMock()
@@ -392,7 +432,13 @@ class TestCoinGeckoAPI(unittest.TestCase):
         mock_get.return_value = mock_response
 
         # Call the method
-        historical_data_df = self.api.contract_historical_market_data(platform_id, contract_address, vs_currency, days)
+        historical_data_df = self.api.contract_historical_market_data(
+            platform_id,
+            contract_address,
+            vs_currency,
+            days,
+            precision=precision
+        )
 
         # Check DataFrame structure
         expected_columns = ['price', 'market_cap', 'total_volume']
@@ -403,6 +449,11 @@ class TestCoinGeckoAPI(unittest.TestCase):
         first_row = historical_data_df.iloc[0]
         mock_first_row = mock.coins_contract_address_market_chart_response['prices'][0]
         self.assertEqual(first_row['price'], mock_first_row[1])
+
+        # Assert that the precision parameter was passed correctly
+        args, kwargs = mock_get.call_args
+        self.assertTrue('precision' in kwargs['params'])
+        self.assertEqual(kwargs['params']['precision'], precision)
 
     # ---------- coins/{id}/contract/{contract_address}/market_chart ---------- #
     # or
@@ -855,6 +906,11 @@ class TestCoinGeckoAPI(unittest.TestCase):
         nft_collection_df = self.api.nft_collection_info(asset_platform_id=asset_platform_id,
                                                          contract_address=contract_address)
 
+        # Add assertions to ensure the mock was called with the correct endpoint
+        expected_endpoint = f'nfts/{asset_platform_id}/contract/{contract_address}'
+        args, kwargs = mock_get.call_args
+        self.assertIn(expected_endpoint, args[0])
+
         # Verify DataFrame structure
         self.assertIsInstance(nft_collection_df, pd.DataFrame)
         self.assertTrue('id' in nft_collection_df.index.name)  # Verify 'id' is the index name
@@ -879,6 +935,16 @@ class TestCoinGeckoAPI(unittest.TestCase):
             else:
                 # For non-dictionary type values, directly compare the value
                 self.assertEqual(nft_collection_data[key], value)
+
+    @patch('requests.Session.get')
+    def test_nft_collection_info_invalid_arguments(self, mock_get):
+        """Test fetching NFT collection data with invalid arguments."""
+        with self.assertRaises(ValueError):
+            # Call without necessary arguments
+            self.api.nft_collection_info()
+
+        # Verify that the API was not called
+        mock_get.assert_not_called()
 
     # ---------- /nfts/{id} for multiple coin ids ---------- #
     @patch('pycgapi.CoinGeckoAPI.nft_collection_info')
@@ -938,6 +1004,27 @@ class TestCoinGeckoAPI(unittest.TestCase):
         # Test ValueError for invalid arguments
         with self.assertRaises(ValueError):
             self.api.nft_collections_info()
+
+    @patch('pycgapi.CoinGeckoAPI.nft_collection_info')
+    def test_nft_collections_info_with_empty_data(self, mock_nft_collection_info):
+        """Test fetching current data for multiple NFT collections with no valid data."""
+
+        # Mock responses for each NFT ID
+        nft_ids = ['invalid-nft1', 'invalid-nft2']
+        mock_responses = {
+            'invalid-nft1': {},  # Empty dict to simulate no data
+            'invalid-nft2': {}  # Empty dict to simulate no data
+        }
+
+        # Configure the mock to return an empty DataFrame for each invalid ID
+        mock_nft_collection_info.side_effect = lambda *args, **kwargs: pd.DataFrame(
+            [mock_responses.get(kwargs['nft_id'], {})])
+
+        # Test with invalid nft_ids
+        empty_nft_collections_df = self.api.nft_collections_info(nft_ids=nft_ids)
+
+        # Verify that the resulting DataFrame is empty
+        self.assertTrue(empty_nft_collections_df.empty)
 
     # ---------- EXCHANGE RATES ---------- #
 

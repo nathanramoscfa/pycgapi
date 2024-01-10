@@ -8,6 +8,8 @@
 [![Documentation Status](https://readthedocs.org/projects/coingeckoapi/badge/?version=latest)](https://coingeckoapi.readthedocs.io/en/latest/?badge=latest)
 ![PyPI](https://img.shields.io/pypi/v/pycgapi)
 ![Python Version](https://img.shields.io/pypi/pyversions/pycgapi)
+[![Downloads](https://static.pepy.tech/badge/pycgapi)](https://pepy.tech/project/pycgapi)
+![Platforms](https://img.shields.io/badge/Platforms-win--64-orange.svg?style=flat-square)
 
 ## Table of Contents
 1. [Overview](#overview)
