@@ -24,7 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Edited the `README.md` and `index.rst` files to include a change log section.
 
 ### Fixed
-- Updated `release.yml` workflow to include a step for installing `setuptools` to fix ModuleNotFoundError.
+- Updated `release.yml` workflow to add required build dependencies.
 
 
 ## [0.1.0] - 2024-01-08
