@@ -16,12 +16,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Creation of `__version__.py` to maintain a single source of truth for the project's version number.
 - Updates to README.md and index.rst for correcting hyperlinks to `examples`.
 - Inclusion of `sphinx` in `requirements.txt` for documentation support.
-- Added a change log section to the `README.md` and `index.rst` files.
 
 ### Updated
 - Corrected badge links in `README.md` and `index.rst` to point to the updated `tests.yml` workflow, ensuring accuracy in workflow status representation.
 - Enhanced `conf.py` with additional settings to improve documentation generation.
 - Made specific updates to `docs/source/index.rst` to refine the workflow badge link, maintaining the accuracy and relevance of project documentation.
+- Edited the `README.md` and `index.rst` files to include a change log section.
+
+### Fixed
+- Updated `release.yml` workflow to include a step for installing `setuptools` to fix ModuleNotFoundError.
 
 
 ## [0.1.0] - 2024-01-08
