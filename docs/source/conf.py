@@ -27,6 +27,8 @@ def get_version():
     raise RuntimeError("Unable to find version string.")
 
 
+sys.path.insert(0, os.path.abspath('../../'))
+
 # -- Project information -----------------------------------------------------
 
 project = 'pycgapi'

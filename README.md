@@ -3,7 +3,7 @@
 </p>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
-[![pytest](https://github.com/nathanramoscfa/pycgapi/actions/workflows/main.yml/badge.svg)](https://github.com/nathanramoscfa/pycgapi/actions/workflows/main.yml)
+[![pytest](https://github.com/nathanramoscfa/pycgapi/actions/workflows/tests.yml/badge.svg)](https://github.com/nathanramoscfa/pycgapi/actions/workflows/tests.yml)
 [![codecov](https://codecov.io/gh/nathanramoscfa/pycgapi/graph/badge.svg?token=I1CRHDN73S)](https://codecov.io/gh/nathanramoscfa/pycgapi)
 [![Documentation Status](https://readthedocs.org/projects/coingeckoapi/badge/?version=latest)](https://coingeckoapi.readthedocs.io/en/latest/?badge=latest)
 ![PyPI](https://img.shields.io/pypi/v/pycgapi)
