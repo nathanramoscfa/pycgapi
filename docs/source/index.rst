@@ -18,7 +18,7 @@
    :alt: License
 
 .. image:: https://github.com/nathanramoscfa/pycgapi/actions/workflows/main.yml/badge.svg
-   :target: https://github.com/nathanramoscfa/pycgapi/actions/workflows/main.yml
+   :target: https://github.com/nathanramoscfa/pycgapi/actions/workflows/tests.yml
    :alt: pytest
 
 .. image:: https://codecov.io/gh/nathanramoscfa/pycgapi/graph/badge.svg?token=I1CRHDN73S
