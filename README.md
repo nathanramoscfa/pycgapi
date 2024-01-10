@@ -2,7 +2,6 @@
   <img src="media/logo.png" alt="Logo" style="width: 40%; height: auto;">
 </p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 [![pytest](https://github.com/nathanramoscfa/pycgapi/actions/workflows/tests.yml/badge.svg)](https://github.com/nathanramoscfa/pycgapi/actions/workflows/tests.yml)
 [![codecov](https://codecov.io/gh/nathanramoscfa/pycgapi/graph/badge.svg?token=I1CRHDN73S)](https://codecov.io/gh/nathanramoscfa/pycgapi)
 [![Documentation Status](https://readthedocs.org/projects/coingeckoapi/badge/?version=latest)](https://coingeckoapi.readthedocs.io/en/latest/?badge=latest)
@@ -10,6 +9,7 @@
 ![Python Version](https://img.shields.io/pypi/pyversions/pycgapi)
 [![Downloads](https://static.pepy.tech/badge/pycgapi)](https://pepy.tech/project/pycgapi)
 ![Platforms](https://img.shields.io/badge/Platforms-win--64-orange.svg?style=flat-square)
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
 1. [Overview](#overview)

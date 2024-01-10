@@ -13,10 +13,6 @@
 
 |nbsp|
 
-.. image:: https://img.shields.io/badge/License-MIT-brightgreen.svg
-   :target: https://img.shields.io/badge/
-   :alt: License
-
 .. image:: https://github.com/nathanramoscfa/pycgapi/actions/workflows/tests.yml/badge.svg
    :target: https://github.com/nathanramoscfa/pycgapi/actions/workflows/tests.yml
    :alt: pytest
@@ -39,6 +35,12 @@
 
 .. image:: https://img.shields.io/badge/Platforms-win--64-orange.svg?style=flat-square
    :target: https://www.python.org
+
+|nbsp|
+
+.. image:: https://img.shields.io/badge/License-MIT-brightgreen.svg
+   :target: https://img.shields.io/badge/
+   :alt: License
 
 Table of Contents
 =================
