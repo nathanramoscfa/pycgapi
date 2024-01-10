@@ -24,8 +24,8 @@ jobs:
         run: |
           echo "__version__ = '${{ env.VERSION }}'" > pycgapi/__version__.py
 
-      - name: Install setuptools
-        run: pip install setuptools
+      - name: Install build dependencies
+        run: pip install setuptools wheel
 
       - name: Install dependencies
         run: pip install -r requirements.txt
