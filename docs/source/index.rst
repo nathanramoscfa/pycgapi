@@ -34,6 +34,11 @@
 .. image:: https://img.shields.io/pypi/pyversions/pycgapi
    :target: https://pypi.org/project/pycgapi/
 
+.. image:: https://static.pepy.tech/badge/pycgapi
+   :target: https://pepy.tech/project/pycgapi
+
+.. image:: https://img.shields.io/badge/Platforms-win--64-orange.svg?style=flat-square
+   :target: https://www.python.org
 
 Table of Contents
 =================
