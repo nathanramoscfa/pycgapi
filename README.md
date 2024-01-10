@@ -1,5 +1,14 @@
-<p align="center">
-  <img src="media/logo.png" alt="Logo" style="width: 40%; height: auto;">
+<style>
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+</style>
+
+<p>
+  <img src="media/logo.png" alt="Logo" class="center">
 </p>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
@@ -37,8 +46,9 @@
 9. [Testing](#testing)
 10. [Roadmap](#roadmap)
 11. [Contributing](#contributing)
-12. [License](#license)
-13. [Contact](#contact)
+12. [Change Log](#change-log)
+13. [License](#license)
+14. [Contact](#contact)
 
 
 ## Overview
@@ -608,7 +618,7 @@ api.coin_total_supply_history(coin_id='bitcoin', from_date='12-31-2022', to_date
 ```
 
 * **/token_lists/{asset_platform_id}/all.json** - Get list of tokens for a specific blockchain network supported by 
-  Ethereum token list standard..
+  Ethereum token list standard.
 
 ```python
 api.all_tokens_list(asset_platform_id='ethereum')
@@ -662,6 +672,9 @@ the detailed coverage report.
 
 ## Contributing
 Contributions are welcome! Please feel free to submit pull requests, report bugs, or suggest new features.
+
+## Change Log
+Notable changes can be found in the [Change Log](https://github.com/nathanramoscfa/pycgapi/blob/main/CHANGELOG.md). 
 
 ## License
 `pycgapi` is released under the MIT License. See [LICENSE](https://github.com/nathanramoscfa/pycgapi/LICENSE) file for more details.

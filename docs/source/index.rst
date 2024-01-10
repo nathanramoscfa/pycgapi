@@ -342,6 +342,11 @@ Contributing
 
 Contributions are welcome! Please feel free to submit pull requests, report bugs, or suggest new features.
 
+Change Log
+==========
+
+Notable changes can be found in the `CHANGE LOG <https://github.com/nathanramoscfa/pycgapi/blob/main/LICENSE>`_.
+
 License
 =======
 
