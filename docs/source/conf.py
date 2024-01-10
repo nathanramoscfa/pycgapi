@@ -11,8 +11,20 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
 import os
+import re
 import sys
-sys.path.insert(0, os.path.abspath('../..'))
+
+
+# Function to extract the version from __version__.py
+def get_version():
+    here = os.path.abspath(os.path.dirname(__file__))
+    with open(os.path.join(here, '../../__version__.py'), encoding='utf-8') as f:
+        version_file_contents = f.read()
+    # Use regular expression to extract version string
+    version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]", version_file_contents, re.M)
+    if version_match:
+        return version_match.group(1)
+    raise RuntimeError("Unable to find version string.")
 
 
 # -- Project information -----------------------------------------------------
@@ -22,9 +34,8 @@ copyright = '2024, Nathan Ramos, CFA'
 author = 'Nathan Ramos, CFA'
 
 # The full version, including alpha/beta/rc tags
-version = '0.1.0'
-release = '0.1.0'
-
+version = get_version()
+release = get_version()
 
 # -- General configuration ---------------------------------------------------
 
@@ -53,7 +64,6 @@ autodoc_default_options = {
 source_suffix = ['.rst', '.md']
 source_encoding = 'utf-8'
 master_doc = 'index'
-
 
 # -- Options for HTML output -------------------------------------------------
 

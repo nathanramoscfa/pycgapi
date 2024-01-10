@@ -6,6 +6,8 @@
 [![pytest](https://github.com/nathanramoscfa/pycgapi/actions/workflows/main.yml/badge.svg)](https://github.com/nathanramoscfa/pycgapi/actions/workflows/main.yml)
 [![codecov](https://codecov.io/gh/nathanramoscfa/pycgapi/graph/badge.svg?token=I1CRHDN73S)](https://codecov.io/gh/nathanramoscfa/pycgapi)
 [![Documentation Status](https://readthedocs.org/projects/coingeckoapi/badge/?version=latest)](https://coingeckoapi.readthedocs.io/en/latest/?badge=latest)
+![PyPI](https://img.shields.io/pypi/v/pycgapi)
+![Python Version](https://img.shields.io/pypi/pyversions/pycgapi)
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -90,7 +92,7 @@ python setup.py install
 ## API Key
 You do not need an API key to use the Public API. You will need an API key to use the Pro API. To obtain an API key,
 please visit the [CoinGecko API](https://www.coingecko.com/api) page and follow the instructions. This package comes 
-bundled with `keyring` ([Homepage](https://github.com/jaraco/keyring)) to save and retrieve your API key securely 
+bundled with [keyring](https://github.com/jaraco/keyring) to save and retrieve your API key securely 
 without having to hardcode it. To save your API key, simply run the following code in a Python console or Jupyter 
 Notebook:
 
@@ -132,7 +134,7 @@ api = CoinGeckoAPI()  # no API key required for public API
 ```python
 import keyring
 from pycgapi import CoinGeckoAPI
-api_key = keyring.get_password('coingecko', 'api_key')  # gets your API key from keyring
+api_key = keyring.get_password('coingecko', 'api_key')  # gets your API key
 api = CoinGeckoAPI(api_key, pro_api=True)  # must provide api_key and set pro_api=True
 ```
 **Ping the CoinGecko API server:**
@@ -150,7 +152,7 @@ The output above confirms a successful connection to the CoinGecko API server.
 
 ## Usage Examples
 For detailed examples of all endpoints, see the 
-[examples directory](https://github.com/nathanramoscfa/pycgapi/examples). Here are a few examples of `pycgapi`:
+[examples directory](https://github.com/nathanramoscfa/pycgapi/tree/main/examples). Here are a few examples of `pycgapi`:
 
 **Get a list of all supported coins:**
 

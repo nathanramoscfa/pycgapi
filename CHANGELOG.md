@@ -5,8 +5,17 @@ All notable changes to `pycgapi` will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to 
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-### Added
+## [Unreleased]
 - Asynchronous functionality for enhanced performance (planned).
+
+## [0.1.1] - 2024-01-09
+
+### Added
+- Automated GitHub workflow for Pypi package release.
+- Separation of different GitHub workflows into their individual `.yml` files.
+- Creation of `__version__.py` to maintain a single source of truth for the project's version number.
+- Updates to README.md and index.rst for correcting hyperlinks to `examples`.
+- Inclusion of `sphinx` in `requirements.txt` for documentation support.
 
 ## [0.1.0] - 2024-01-08
 
@@ -28,6 +37,3 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Fixed
 - Comprehensive testing for all functionalities ensuring robust performance.
-
-## [Unreleased]
-- No pending changes.

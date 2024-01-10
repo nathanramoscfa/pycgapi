@@ -1,4 +1,19 @@
+import os
+import re
 from setuptools import setup, find_packages
+
+
+# Function to extract the version from __version__.py
+def get_version():
+    here = os.path.abspath(os.path.dirname(__file__))
+    with open(os.path.join(here, '__version__.py'), encoding='utf-8') as f:
+        version_file_contents = f.read()
+    # Use regular expression to extract version string
+    version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]", version_file_contents, re.M)
+    if version_match:
+        return version_match.group(1)
+    raise RuntimeError("Unable to find version string.")
+
 
 # Read the contents of your requirements file
 with open('requirements.txt', encoding='utf-8') as f:
@@ -10,7 +25,7 @@ with open('README.md', encoding='utf-8') as f:
 
 setup(
     name='pycgapi',
-    version='0.1.0',
+    version=get_version(),
     author='Nathan Ramos, CFA',
     author_email='nathan.ramos.github@gmail.com',
     description='A Python wrapper for the CoinGecko API',
