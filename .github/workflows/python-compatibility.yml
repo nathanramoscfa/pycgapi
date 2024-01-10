@@ -24,6 +24,13 @@ jobs:
         pip install -r requirements.txt
     - name: Test with your package
       run: |
-        # Replace with your package's test commands
         pytest --cov=./pycgapi --cov-report=xml
       continue-on-error: true
+    - name: Compatibility Result
+      if: ${{ always() }}
+      run: |
+        if [ ${{ job.status }} == 'success' ]; then
+          echo "Python ${{ matrix.python-version }}: Compatible"
+        else
+          echo "Python ${{ matrix.python-version }}: Incompatible"
+        fi
