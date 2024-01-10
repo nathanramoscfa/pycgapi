@@ -17,7 +17,7 @@
    :target: https://img.shields.io/badge/
    :alt: License
 
-.. image:: https://github.com/nathanramoscfa/pycgapi/actions/workflows/main.yml/badge.svg
+.. image:: https://github.com/nathanramoscfa/pycgapi/actions/workflows/tests.yml/badge.svg
    :target: https://github.com/nathanramoscfa/pycgapi/actions/workflows/tests.yml
    :alt: pytest
 
