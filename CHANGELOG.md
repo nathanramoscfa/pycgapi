@@ -9,6 +9,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Asynchronous functionality for enhanced performance (planned).
 - Refactoring of codebase for improved maintainability (planned).
 
+## [0.1.4] - 2024-01-10
+
+### Added
+
+- Tested compatibility with Python 3.9, 3.10, and 3.11.
+- Added a .dockerignore file to exclude unnecessary files from the Docker image.
+- Added *.bat files to .gitignore and .dockerignore.
+
 ## [0.1.3] - 2024-01-10
 
 ### Updated

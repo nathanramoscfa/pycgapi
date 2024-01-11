@@ -34,14 +34,15 @@ setup(
     url='https://github.com/nathanramoscfa/pycgapi',
     packages=find_packages(),
     install_requires=required,
-    python_requires='>=3.11',
+    python_requires='>=3.9, <3.12',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Natural Language :: English',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
-        'Programming Language :: Python :: 3 :: Only',
         'Operating System :: OS Independent',
-        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Topic :: Software Development :: Libraries :: Python Modules :: API :: Financial :: Cryptocurrency',
     ],
 )

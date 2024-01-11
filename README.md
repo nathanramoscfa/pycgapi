@@ -2,14 +2,13 @@
   <img src="media/logo.png" alt="Logo" style="width: 40%; height: auto;">
 </p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 [![pytest](https://github.com/nathanramoscfa/pycgapi/actions/workflows/tests.yml/badge.svg)](https://github.com/nathanramoscfa/pycgapi/actions/workflows/tests.yml)
 [![codecov](https://codecov.io/gh/nathanramoscfa/pycgapi/graph/badge.svg?token=I1CRHDN73S)](https://codecov.io/gh/nathanramoscfa/pycgapi)
 [![Documentation Status](https://readthedocs.org/projects/coingeckoapi/badge/?version=latest)](https://coingeckoapi.readthedocs.io/en/latest/?badge=latest)
 ![PyPI](https://img.shields.io/pypi/v/pycgapi)
 ![Python Version](https://img.shields.io/pypi/pyversions/pycgapi)
 [![Downloads](https://static.pepy.tech/badge/pycgapi)](https://pepy.tech/project/pycgapi)
-![Platforms](https://img.shields.io/badge/Platforms-win--64-orange.svg?style=flat-square)
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -46,8 +45,8 @@
 
 ## Overview
 `pycgapi` is an unofficial Python wrapper for the CoinGecko API (V3). It's designed to process API endpoint
-responses to easy-to-use `pandas` DataFrames.  From simple price checks to complex historical data analysis, 
-`pycgapi` facilitates seamless integration with the CoinGecko API. For more information on the 
+responses into easy-to-use `pandas` DataFrames wherever possible.  From simple price checks to complex historical data 
+analysis, `pycgapi` facilitates seamless integration with the CoinGecko API. For more information on the 
 official CoinGecko API, please refer to the official [documentation](https://www.coingecko.com/api/documentation).
 
 ## Features

@@ -13,10 +13,6 @@
 
 |nbsp|
 
-.. image:: https://img.shields.io/badge/License-MIT-brightgreen.svg
-   :target: https://img.shields.io/badge/
-   :alt: License
-
 .. image:: https://github.com/nathanramoscfa/pycgapi/actions/workflows/tests.yml/badge.svg
    :target: https://github.com/nathanramoscfa/pycgapi/actions/workflows/tests.yml
    :alt: pytest
@@ -37,8 +33,9 @@
 .. image:: https://static.pepy.tech/badge/pycgapi
    :target: https://pepy.tech/project/pycgapi
 
-.. image:: https://img.shields.io/badge/Platforms-win--64-orange.svg?style=flat-square
-   :target: https://www.python.org
+.. image:: https://img.shields.io/badge/License-MIT-brightgreen.svg
+   :target: https://img.shields.io/badge/
+   :alt: License
 
 Table of Contents
 =================
@@ -50,7 +47,7 @@ Table of Contents
 Overview
 ========
 ``pycgapi`` is an unofficial Python wrapper for the CoinGecko API (V3). It's designed to process API endpoint
-responses to easy-to-use ``pandas`` DataFrames. From simple price checks to complex historical
+responses into easy-to-use ``pandas`` DataFrames wherever possible. From simple price checks to complex historical
 data analysis, ``pycgapi`` facilitates seamless integration with the CoinGecko API. For more information on the
 official CoinGecko API, please refer to their `documentation <https://www.coingecko.com/api/documentation>`_.
 
@@ -363,18 +360,16 @@ Contact
 Find me on `LinkedIn <https://www.linkedin.com/in/nathanramos/>`_
 or schedule a meeting on `Calendly <https://calendly.com/nrcapitalmanagement/pycgapi-meeting>`_.
 
-API Documentation
-=================
+API
+===
 
 .. toctree::
    :maxdepth: 2
-   :caption: API
+   :caption: Modules
 
    pycgapi
 
-Indices and tables
-==================
+Indices
+=======
 
 * :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
