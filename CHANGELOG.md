@@ -13,7 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
-- Added `python-compatibility` workflow for automated testing of the package on multiple Python versions.
+- Unconstrained the python version in `setup.py` to allow for compatibility testing.
 
 ## [0.1.3] - 2024-01-10
 
