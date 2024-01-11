@@ -91,3 +91,4 @@ dmypy.json
 *.bak
 *.swp
 *.tmp
+*.bat
