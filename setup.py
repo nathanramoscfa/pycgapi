@@ -43,6 +43,9 @@ setup(
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
         'Operating System :: OS Independent',
-        'Topic :: Software Development :: Libraries :: Python Modules :: API :: Financial :: Cryptocurrency',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Intended Audience :: Developers',
+        'Intended Audience :: Financial and Insurance Industry',
+        'License :: OSI Approved :: MIT License'
     ],
 )
