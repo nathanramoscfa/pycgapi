@@ -9,6 +9,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Asynchronous functionality for enhanced performance (planned).
 - Refactoring of codebase for improved maintainability (planned).
 
+## [0.1.5] - 2024-01-17
+
+### Fixed
+
+- Updated `README.md` to fix "bitoin" typo to "bitcoin".
+
 ## [0.1.4] - 2024-01-10
 
 ### Added
