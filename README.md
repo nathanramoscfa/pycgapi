@@ -299,41 +299,41 @@ api.top_coins_market_data(top_n=10)
 * **/coins/{id}** - Get current data (name, price, market, ... including exchange tickers) for a coin.
 
 ```python
-api.coin_info(coin_id='bitoin')
+api.coin_info(coin_id='bitcoin')
 ```
 
 * **/coins/{id}/tickers** - Get coin tickers (paginated to 100 items).
 
 ```python
-api.coin_market_tickers(coin_id='bitoin')
+api.coin_market_tickers(coin_id='bitcoin')
 ```
 
 * **/coins/{id}/history** - Get historical data (name, price, market, stats) at a given date for a coin.
 ```python
-api.coin_historical_on_date(coin_id='bitoin', date='12-31-2023')
+api.coin_historical_on_date(coin_id='bitcoin', date='12-31-2023')
 ```
 
 * **/coins/{id}/market_chart** - Get historical market data include price, market cap, and 24h volume (granularity auto).
 
 ```python
-api.coin_historical_market_data(coin_id='bitoin')
-api.multiple_coins_historical_data(coin_ids=['bitoin', 'ethereum', 'tether', 'binancecoin', 'solana'])
+api.coin_historical_market_data(coin_id='bitcoin')
+api.multiple_coins_historical_data(coin_ids=['bitcoin', 'ethereum', 'tether', 'binancecoin', 'solana'])
 ```
 
 * **/coins/{id}/market_chart/range** - Get historical market data include price, market cap, and 24h volume within a 
   range of timestamp (granularity auto).
 
 ```python
-api.coin_historical_market_data(coin_id='bitoin', from_date='12-31-2022', to_date='12-31-2023')
-api.multiple_coins_historical_data(coin_ids=['bitoin', 'ethereum', 'tether'], from_date='12-31-2022',
+api.coin_historical_market_data(coin_id='bitcoin', from_date='12-31-2022', to_date='12-31-2023')
+api.multiple_coins_historical_data(coin_ids=['bitcoin', 'ethereum', 'tether'], from_date='12-31-2022',
                                    to_date='12-31-2023')
 ```
 
 * **/coins/{id}/ohlc** - Get coin's OHLC (candlestick) data.
 
 ```python
-api.coin_ohlc_data(coin_id='bitoin')
-api.multiple_coins_ohlc_data(coin_ids=['bitoin', 'ethereum', 'tether', 'binancecoin', 'solana'])
+api.coin_ohlc_data(coin_id='bitcoin')
+api.multiple_coins_ohlc_data(coin_ids=['bitcoin', 'ethereum', 'tether', 'binancecoin', 'solana'])
 ```
 </details>
 
