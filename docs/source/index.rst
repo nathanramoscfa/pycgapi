@@ -126,7 +126,7 @@ is a summary table of the key features of each plan:
 +-------------+----------------+------------------------+----------------+-----------------------+
 | Plan        | Monthly Price  | Annual Price (Monthly) | Rate Limit/Min | Call Credits (Monthly)|
 +=============+================+========================+================+=======================+
-| Demo (Beta) | Free           | Free                   | 10-30          | 10K                   |
+| Demo        | Free           | Free                   | 10-30          | 10K                   |
 +-------------+----------------+------------------------+----------------+-----------------------+
 | Analyst     | $129           | $103                   | 500            | 500K                  |
 +-------------+----------------+------------------------+----------------+-----------------------+
@@ -143,7 +143,7 @@ Quick Start
 
 To initialize the ``pycgapi`` client, simply run the following code based on your API plan:
 
-**Demo (Beta) API:**
+**Demo API:**
 
 .. code-block:: python
 
