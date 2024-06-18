@@ -1,3 +1,3 @@
-from .api import CoinGeckoAPI
+from .base import CoinGeckoAPI
 
 __all__ = ['CoinGeckoAPI']

@@ -113,25 +113,16 @@ Output:
 CoinGecko offers various [API plans](https://www.coingecko.com/en/api/pricing) tailored to different user needs. Below 
 is a summary table of the key features of each plan:
 
-| Plan       | Monthly Price  | Annual Price (Monthly) | Rate Limit/Min | Call Credits (Monthly |
-|------------|----------------|------------------------|----------------|-----------------------|
-| Demo       | Free           | Free                   | 10-30          | 10K                   |
-| Analyst    | $129           | $103                   | 500            | 500K                  |
-| Lite       | $499           | $399                   | 500            | 2M                    |
-| Pro        | $999           | $799                   | 1000           | 5M                    |
-| Enterprise | Custom Pricing | Custom Pricing         | Custom         | Custom                |
+| Plan       | Monthly Price  | Annual Price (Monthly) | Rate Limit/Min | Call Credits (Monthly) |
+|------------|----------------|------------------------|----------------|------------------------|
+| Demo       | Free           | Free                   | 10-30          | 10K                    |
+| Analyst    | $129           | $103                   | 500            | 500K                   |
+| Lite       | $499           | $399                   | 500            | 2M                     |
+| Pro        | $999           | $799                   | 1000           | 5M                     |
+| Enterprise | Custom Pricing | Custom Pricing         | Custom         | Custom                 |
 
 ## Quick Start
-To initialize the `pycgapi` client, simply run the following code based on your API plan:
-
-**Demo API:**
-
-```python
-from pycgapi import CoinGeckoAPI
-api = CoinGeckoAPI()  # no API key required for public API
-```
-
-**Paid Plan API:**
+To initialize the `pycgapi` client, simply run the following code:
 
 ```python
 import keyring

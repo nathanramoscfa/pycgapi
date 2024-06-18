@@ -100,11 +100,12 @@ Alternatively, you can install the latest version of ``pycgapi`` directly from t
 API Key
 =======
 
-You do not need an API key to use the Public API. You will need an API key to use the Pro API. To obtain an API key,
-please visit the `CoinGecko API <https://www.coingecko.com/api>`_ page and follow the instructions. This package comes
-bundled with `keyring <https://github.com/jaraco/keyring>`_ to save and retrieve your API key securely
-without having to hardcode it. To save your API key, simply run the following code in a Python console or Jupyter
-Notebook:
+You will need an API key to use the Demo API and Pro API. To obtain an API key,
+please visit the `CoinGecko API <https://www.coingecko.com/api>`_ page and
+follow the instructions. This package comes bundled with
+`keyring <https://github.com/jaraco/keyring>`_ to save and retrieve your API key
+securely without having to hardcode it. To save your API key, simply run the
+following code in a Python console or Jupyter Notebook:
 
 .. code-block:: python
 
@@ -120,8 +121,9 @@ Output:
 
     'MY_API_KEY'
 
-CoinGecko offers various `API plans <https://www.coingecko.com/en/api/pricing>`_ tailored to different user needs. Below
-is a summary table of the key features of each plan:
+CoinGecko offers various `API plans <https://www.coingecko.com/en/api/pricing>`_
+tailored to different user needs. Below is a summary table of the key features
+of each plan:
 
 +-------------+----------------+------------------------+----------------+-----------------------+
 | Plan        | Monthly Price  | Annual Price (Monthly) | Rate Limit/Min | Call Credits (Monthly)|
@@ -147,8 +149,17 @@ To initialize the ``pycgapi`` client, simply run the following code based on you
 
 .. code-block:: python
 
+    import keyring
     from pycgapi import CoinGeckoAPI
-    api = CoinGeckoAPI()  # no API key required for public API
+
+    # gets your API key
+    api_key = keyring.get_password(
+       'coingecko',
+       'api_key'
+    )
+
+    # set pro_api=False for paid plans
+    api = CoinGeckoAPI(api_key, pro_api=False)
 
 **Paid Plan API:**
 
@@ -163,7 +174,7 @@ To initialize the ``pycgapi`` client, simply run the following code based on you
        'api_key'
     )
 
-    # must provide api_key and set pro_api=True
+    # set pro_api=True for paid plans
     api = CoinGeckoAPI(api_key, pro_api=True)
 
 **Ping the CoinGecko API server:**

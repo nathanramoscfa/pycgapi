@@ -23,5 +23,6 @@ def convert_to_unix(date_str):
             return int(date_str)
         except ValueError:
             # Converting from 'mm-dd-yyyy' format to UNIX timestamp
-            return int(time.mktime(datetime.strptime(date_str, '%m-%d-%Y').timetuple()))
+            return int(time.mktime(datetime.strptime(
+                date_str, '%m-%d-%Y').timetuple()))
     return None
