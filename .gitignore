@@ -49,6 +49,7 @@ coverage.xml
 
 # Jupyter Notebook
 .ipynb_checkpoints
+project_tree.ipynb
 
 # PyCharm
 .idea/

@@ -1,61 +1,59 @@
 import unittest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
+import pandas as pd
 
-from asset_platforms import AssetPlatforms
-import mock_responses as mock
+from ..pycgapi import CoinGeckoAPI
 
 
 class TestAssetPlatforms(unittest.TestCase):
 
-    def setUp(self):
-        """Initialize the AssetPlatforms API for testing."""
-        self.cg = AssetPlatforms(
-            api_key='test_api_key',
-            pro_api=False,
-            retries=5
-        )
-
-    @patch('pycgapi.base.requests.Session.get')
+    @patch.object(CoinGeckoAPI, '_get')
     def test_asset_platforms_list(self, mock_get):
-        """Test fetching all asset platforms without any filter."""
-        # Prepare the mock response
-        mock_response = MagicMock()
-        mock_response.json.return_value = mock.asset_platforms_response
+        # Mock response data
+        mock_response = [
+            {'id': 'ethereum', 'chain_identifier': 1, 'name': 'Ethereum'},
+            {'id': 'binance-smart-chain', 'chain_identifier': 56,
+             'name': 'Binance Smart Chain'}
+        ]
         mock_get.return_value = mock_response
 
-        # Execute the function
-        asset_platforms_df = self.cg.asset_platforms_list()
+        # Initialize the CoinGeckoAPI class
+        cg = CoinGeckoAPI(api_key='test_key', pro_api=True)
 
-        # Expected columns from the response
-        expected_columns = ['id', 'chain_identifier', 'name', 'shortname',
-                            'native_coin_id']
+        # Test without filter
+        result = cg.asset_platforms.asset_platforms_list()
+        mock_get.assert_called_once_with('asset_platforms')
+        expected_df = pd.DataFrame(mock_response)
+        pd.testing.assert_frame_equal(result, expected_df)
 
-        # Check if DataFrame has the expected columns
-        self.assertListEqual(list(asset_platforms_df.columns), expected_columns)
+        # Reset mock
+        mock_get.reset_mock()
 
-        # Verify the DataFrame contains correct data
-        for i, row in enumerate(mock.asset_platforms_response):
-            for col in expected_columns:
-                self.assertEqual(asset_platforms_df.iloc[i][col], row[col])
+        # Test with filter
+        result = cg.asset_platforms.asset_platforms_list(platform_filter='nft')
+        mock_get.assert_called_once_with('asset_platforms', filter='nft')
+        pd.testing.assert_frame_equal(result, expected_df)
 
-    @patch('pycgapi.base.requests.Session.get')
-    def test_asset_platforms_list_with_platform_filter(self, mock_get):
-        """Test fetching asset platforms with 'nft' filter."""
-        # Prepare a different mock response for when the NFT filter is applied
-        mock_response = MagicMock()
-        mock_response.json.return_value = mock.filtered_asset_platforms_response
+    @patch.object(CoinGeckoAPI, '_get')
+    def test_all_tokens_list(self, mock_get):
+        # Mock response data
+        mock_response = {
+            'tokens': [
+                {'name': 'Wrapped Ether', 'symbol': 'WETH', 'address': '0x...'},
+                {'name': 'USD Coin', 'symbol': 'USDC', 'address': '0x...'}
+            ]
+        }
         mock_get.return_value = mock_response
 
-        # Execute the function with the 'nft' filter
-        asset_platforms_df = self.cg.asset_platforms_list(
-            platform_filter="nft")
+        # Initialize the CoinGeckoAPI class
+        cg = CoinGeckoAPI(api_key='test_key', pro_api=True)
 
-        # Expected columns remain the same
-        expected_columns = ['id', 'chain_identifier', 'name', 'shortname',
-                            'native_coin_id']
-
-        # Check if DataFrame has the expected columns
-        self.assertListEqual(list(asset_platforms_df.columns), expected_columns)
+        # Test all_tokens_list
+        result = cg.asset_platforms.all_tokens_list(
+            asset_platform_id='ethereum')
+        mock_get.assert_called_once_with('token_lists/ethereum/all.json')
+        expected_df = pd.DataFrame(mock_response['tokens'])
+        pd.testing.assert_frame_equal(result, expected_df)
 
 
 if __name__ == '__main__':
