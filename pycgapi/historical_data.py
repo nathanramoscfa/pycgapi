@@ -209,7 +209,7 @@ class HistoricalData(CoinGeckoAPI):
     def coin_circulating_supply_history(
         self,
         coin_id: str = 'bitcoin',
-        days: Union[int, str] = 'max',
+        days: Union[int, str] = 30,
         interval: str = 'daily',
         from_date: str = None,
         to_date: str = None
