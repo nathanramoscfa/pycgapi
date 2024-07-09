@@ -10,3 +10,4 @@ sphinx~=5.0.2
 sphinx-rtd-theme~=2.0.0
 tqdm~=4.66.1
 urllib3~=2.1.0
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
