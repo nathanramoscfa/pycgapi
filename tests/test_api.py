@@ -310,7 +310,7 @@ class TestCoinGeckoAPI(unittest.TestCase):
         self.assertListEqual(list(historical_data_df.columns), expected_columns)
 
     # ---------- /coins/{id}/market_chart for multiple tickers ---------- #
-    @patch.object(CoinGeckoAPI, 'multiple_coins_ohlc_data')
+    @patch.object(CoinGeckoAPI, 'coin_historical_market_data')
     def test_multiple_coins_historical_data(self, mock_get):
         """Test fetching historical market data for multiple coins."""
         # Prepare mock response
