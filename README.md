@@ -127,8 +127,10 @@ To initialize the `pycgapi` client, simply run the following code based on your 
 **Demo API:**
 
 ```python
+import keyring
 from pycgapi import CoinGeckoAPI
-api = CoinGeckoAPI()  # no API key required for public API
+api_key = keyring.get_password('coingecko', 'api_key')  # gets your API key
+api = CoinGeckoAPI(api_key, pro_api=False)  # set pro_api=False for demo API
 ```
 
 **Paid Plan API:**
@@ -137,7 +139,7 @@ api = CoinGeckoAPI()  # no API key required for public API
 import keyring
 from pycgapi import CoinGeckoAPI
 api_key = keyring.get_password('coingecko', 'api_key')  # gets your API key
-api = CoinGeckoAPI(api_key, pro_api=True)  # must provide api_key and set pro_api=True
+api = CoinGeckoAPI(api_key, pro_api=True)  # set pro_api=True for paid API
 ```
 **Ping the CoinGecko API server:**
 
